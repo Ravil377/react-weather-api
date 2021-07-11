@@ -68,7 +68,7 @@ function WeatherSetting(props) {
                                 className={`setting__input ${isError && "setting__input-error"}`} 
                                 minLength="2" maxLength="40" value={city || ''} onChange={handleChangeCity} 
                                 required />
-                        <button type="button" className="setting__button-city-enter"></button>
+                        <button type="submit" className="setting__button-city-enter"></button>
                     </form>
                 </div>
             </div>

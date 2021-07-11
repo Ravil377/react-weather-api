@@ -21,7 +21,7 @@ function App() {
                 .then((res) => {
                     handleClickSubmit(res.city);
                 })
-                .catch((error) => console.log(error));
+                .catch((error) => setIsError(true));
         }
     });
 
@@ -43,6 +43,12 @@ function App() {
         return false;
     };
 
+    const errorAnimation = () => {
+      setIsError(true);
+      setIsLoading((state) => !state);
+      setTimeout(() => setIsError(false), 500);
+    }
+
     const handleClickSubmit = (town) => {
         setIsLoading((state) => !state);
         weatherApi.getWeatherByCity(town).then((newTown) => {
@@ -50,12 +56,10 @@ function App() {
                 setCity((oldTown) => [...oldTown, newTown]);
                 setIsLoading((state) => !state);
             } else {
-                setIsError(true);
-                setIsLoading((state) => !state);
-                setTimeout(() => setIsError(false), 500);
+                errorAnimation();
                 return;
             }
-        });
+        }).catch(error => errorAnimation());
     };
 
     const handleClickRemove = (id) => setCity(() => city.filter((town) => town.id !== id));
