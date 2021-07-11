@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
+.weather {
+    margin-top: 20px;
+    max-width: 250px;
+}
+
+.weather__items {
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.weather__item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.weather__icon {
+    object-fit: cover;
+}
+
+.weather__description {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.weather__description:before {
+    display: inline-block;
+    margin-left: 10px;
+}
+.weather__wind {
+    display: flex;
+}
+.weather__description-wind-arrow::before {
+    width: 10px;
+    content: url(../images/navigation-cursor.svg);
+}
+
+.weather__image {
+    justify-content: center;   
+}
+
+.weather__title {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.weather__temperature {
+    margin-left: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    justify-self: left;
+}
+
+.weather__setting {
+    width: 20px;
+    cursor: pointer;
+}
