@@ -35,9 +35,12 @@
 .weather__wind {
     display: flex;
 }
-.weather__description-wind-arrow::before {
-    width: 10px;
-    content: url(../images/navigation-cursor.svg);
+.weather__description-wind-arrow {
+    position: relative;
+    top: 5px;
+    width: 15px;
+    object-fit: contain;
+    margin-right: 5px;
 }
 
 .weather__image {
