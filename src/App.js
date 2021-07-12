@@ -81,6 +81,7 @@ function App() {
         e.target.style.background = "#ececec";
     };
 
+
     return (
         <>
             {isOpenSetting && city ? (
@@ -97,7 +98,7 @@ function App() {
                     isError={isError}
                 />
             ) : (
-                city.map((item) => <Weather key={item.id} isOpenSetting={handleClickSetting} city={item} />)
+                city.map((item, idx) => <Weather key={item.id} isOpenSetting={handleClickSetting} city={item} isCount={idx} />)
             )}
         </>
     );
